@@ -1,0 +1,9 @@
+(executable
+ (name sha256sum)
+ (link_flags :standard -cclib "-z caml-startup")
+ (libraries digestif))
+
+(rule
+ (target sha256sum.com)
+ (deps sha256sum.exe)
+ (action (run objcopy -S -O binary %{deps} %{target})))

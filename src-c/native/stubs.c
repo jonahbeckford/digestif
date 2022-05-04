@@ -16,7 +16,9 @@
 #define Bytes_val(x) String_val(x)
 #endif
 
-#if defined(__ocaml_freestanding__) || defined(__ocaml_solo5__)
+#if defined(__ESPERANTO__) \
+ || defined(__ocaml_freestanding__) \
+ || defined(__ocaml_solo5__)
 #define __define_ba_update(name)                                             \
   CAMLprim value                                                             \
   caml_digestif_ ## name ## _ba_update                                       \
